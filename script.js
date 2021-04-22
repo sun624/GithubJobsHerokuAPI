@@ -3,7 +3,7 @@ document.querySelector("#user_input").addEventListener("submit", createButton);
 function createButton(event) {
   event.preventDefault();
 
-  if (event.target.nextSibling.nextSibling.firstChild!== null) {
+  if (event.target.nextSibling.nextSibling.firstChild !== null) {
     event.target.nextSibling.nextSibling.firstChild.remove();
   }
   //get input from user
@@ -27,6 +27,10 @@ async function generateJobs(event) {
   let jobsDiv = document.getElementById("cards_container").innerHTML;
 
   document.getElementById("cards_container").setAttribute("class", "row");
+
+  if (jobs.length === 0) {
+    alert("No jobs found, please search using different keywords");
+  }
   jobsDiv = "";
 
   const fallBackUrl =
